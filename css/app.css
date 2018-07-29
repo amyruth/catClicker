@@ -1,0 +1,64 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	height: 100%;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-color: bisque;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+}
+
+h1, h2 {
+	text-align: center;
+	margin: 20px;
+}
+
+h1 {
+	font-size: 50px;
+}
+.catFig {
+	align-self: center;
+	width: 80%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.cat1 {
+	width: 50%;
+	height: 50%;
+	align-self: center;
+	margin: 0 auto;
+	align-self: center;
+}
+
+figcaption {
+	margin-top: 20px;
+}
+
+.cat1-clicks {
+	height: 20%;
+	background-color: rgb(172, 30, 117);
+	font-size: 60px;
+	display: flex;
+	justify-content: center;	
+	margin: 30px auto;
+}
+
+.cat1-clicks p{
+	text-align: center;
+	margin: 0 auto;
+	align-self: center;
+}
