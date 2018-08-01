@@ -53,6 +53,8 @@ h1 {
 	width: 25%;
 	height: 25%;
 	align-self: center;
+	margin: 30px auto;
+	white-space: nowrap;
 }
 
 .cat1-clicks, .cat2-clicks{
