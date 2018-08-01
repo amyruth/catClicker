@@ -17,6 +17,17 @@ body {
 	height: 100%;
 }
 
+.gallery {
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+
+.gallery-row {
+	display: flex;
+	justify-content: space-between;
+}
+
 h1, h2 {
 	text-align: center;
 	margin: 20px;
@@ -36,16 +47,12 @@ h1 {
 	margin-top: 20px;
 }
 
-.cat1 {
+.cat {
 	width: 50%;
 	height: 50%;
 	align-self: center;
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	align-self: center;
-}
-
-figcaption {
-	margin-top: 20px;
 }
 
 .cat1-clicks {
@@ -61,4 +68,9 @@ figcaption {
 	text-align: center;
 	margin: 0 auto;
 	align-self: center;
+}
+
+.catname {
+	font-family: 'Oswald', sans-serif;
+	font-size: 35px;
 }
