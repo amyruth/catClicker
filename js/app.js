@@ -14,3 +14,24 @@
 // 	counter2++;
 // 	scoreArea2.innerHTML = `<p>${counter2}</p>`;
 // });
+let count= 0;
+class Cat {
+	constructor(name, image) {
+		this.name = name;
+		this.image = image;
+		this.clicks = 0;
+	}
+
+	this.addClicks = function() {
+		return this.clicks++;
+	}
+}
+
+//array of image assets??
+let resources = [
+	'img/bashful.jpeg',
+	'img/cloudy.jpg',
+	'dramacat.jpg',
+	'misty.jpeg',
+	'rodin.jpeg'
+];
