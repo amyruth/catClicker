@@ -35,3 +35,5 @@ let resources = [
 	'misty.jpeg',
 	'rodin.jpeg'
 ];
+
+//resize images look up es6 object creation again
