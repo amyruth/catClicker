@@ -27,13 +27,13 @@ class Cat {
 	}
 }
 
-//array of image assets??
-let resources = [
-	'img/bashful.jpeg',
-	'img/cloudy.jpg',
-	'img/dramacat.jpg',
-	'img/misty.jpeg',
-	'img/rodin.jpeg'
+//array of cat names and img src
+let catInfo = [
+	['img/bashful.jpeg', 'Bashful'],
+	['img/cloudy.jpg', 'Cloudy'],
+	['img/dramacat.jpg', 'DramatiCat'],
+	['img/misty.jpeg', 'Misty'],
+	['img/rodin.jpeg', 'Rodin']
 ];
 
 const cat1 = document.querySelector('#cat1');
@@ -43,3 +43,4 @@ const cat4 = document.querySelector('#cat4');
 const cat5 = document.querySelector('#cat5');
 const catName = document.querySelector('.catname');
 const catImg = document.querySelector('#catpic');
+
