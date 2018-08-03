@@ -14,7 +14,7 @@
 // 	counter2++;
 // 	scoreArea2.innerHTML = `<p>${counter2}</p>`;
 // });
-let count= 0;
+let count = 0;
 class Cat {
 	constructor(name, image) {
 		this.name = name;
@@ -22,7 +22,7 @@ class Cat {
 		this.clicks = 0;
 	}
 
-	this.addClicks = function() {
+	this.addClicks = function () {
 		return this.clicks++;
 	}
 }
@@ -31,9 +31,15 @@ class Cat {
 let resources = [
 	'img/bashful.jpeg',
 	'img/cloudy.jpg',
-	'dramacat.jpg',
-	'misty.jpeg',
-	'rodin.jpeg'
+	'img/dramacat.jpg',
+	'img/misty.jpeg',
+	'img/rodin.jpeg'
 ];
 
-//resize images look up es6 object creation again
+const cat1 = document.querySelector('#cat1');
+const cat2 = document.querySelector('#cat2');
+const cat3 = document.querySelector('#cat3');
+const cat4 = document.querySelector('#cat4');
+const cat5 = document.querySelector('#cat5');
+const catName = document.querySelector('.catname');
+const catImg = document.querySelector('#catpic');
