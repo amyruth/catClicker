@@ -1,40 +1,3 @@
-// const scoreArea = document.querySelector('.cat1-clicks');
-// const scoreArea2 = document.querySelector('.cat2-clicks');
-// const cat1 = document.querySelector('.cat1');
-// const cat2 = document.querySelector('.cat2');
-// let counter1 = 0;
-// let counter2 = 0;
-
-// cat1.addEventListener('click', function () {
-// 	counter1++;
-// 	scoreArea.innerHTML = `<p>${counter1}</p>`;
-// });
-
-// cat2.addEventListener('click', function () {
-// 	counter2++;
-// 	scoreArea2.innerHTML = `<p>${counter2}</p>`;
-// });
-let count = 0;
-class Cat {
-	constructor(name, image) {
-		this.name = name;
-		this.image = image;
-		this.clicks = 0;
-	}
-
-	this.addClicks = function () {
-		return this.clicks++;
-	}
-}
-
-//array of cat names and img src
-let catInfo = [
-	['img/bashful.jpeg', 'Bashful'],
-	['img/cloudy.jpg', 'Cloudy'],
-	['img/dramacat.jpg', 'DramatiCat'],
-	['img/misty.jpeg', 'Misty'],
-	['img/rodin.jpeg', 'Rodin']
-];
 
 const cat1 = document.querySelector('#cat1');
 const cat2 = document.querySelector('#cat2');
@@ -43,4 +6,59 @@ const cat4 = document.querySelector('#cat4');
 const cat5 = document.querySelector('#cat5');
 const catName = document.querySelector('.catname');
 const catImg = document.querySelector('#catpic');
+let catList = document.querySelectorAll('.catlisting');
+const catUl = document.querySelector('.catlist');
+// push into an array called cats?
+// bind to buttons
+// somehow add name from object to button for flexibility
 
+let cats = [
+	{
+		image:'/img/bashful.jpg',
+		name: 'Bashful',
+		clicks: 0
+	},
+	{
+		image:'img/cloudy.jpg',
+		name: 'Cloudy',
+		clicks: 0
+	},
+	{
+		image:'img/dramacat.jpg',
+		name: 'DramatiCat',
+		clicks: 0
+	},
+	{
+		image:'img/misty.jpg',
+		name: 'Misty',
+		clicks: 0
+	},
+	{
+		image:'img/rodin.jpg',
+		name: 'Rodin',
+		clicks: 0
+	}
+];
+
+//adds names to buttons instead of hardcoding them
+//since arrays are the same length, use the index to access 2nd array's items
+//FUTURE REFACTOR: allow for li elements to be created on the fly to accomodate more cats
+catList.forEach(function (item, i){
+	item.textContent = cats[i].name;
+});
+
+//add event to parent ul element so event delegation covers the list
+//go to cats array and find name that matches event target text
+//access that objects image property and set as img src to show picture
+//fill in alt text with 'a cat named + cat's name'
+catUl.addEventListener('click', function(e) {
+	if(e.target.nodeName === 'LI') {
+	cats.forEach(function(cat, i) {
+		if(cat.name == e.target.innerText) {
+			catImg.setAttribute('src', cat.image);
+			catName.textContent = cat.name;
+			catImg.setAttribute('alt', `a cat named ${cat.name}`);
+		}
+	});
+	}
+});
