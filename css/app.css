@@ -58,6 +58,12 @@ body {
 	font-size: 35px;
 }
 
+.clickarea {
+	text-align: center;
+	margin-top: 24px;
+	font-size: 30px;
+}
+
 h1,
 h2 {
 	text-align: center;

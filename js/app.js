@@ -8,10 +8,7 @@ const catName = document.querySelector('.catname');
 const catImg = document.querySelector('#catpic');
 let catList = document.querySelectorAll('.catlisting');
 const catUl = document.querySelector('.catlist');
-// push into an array called cats?
-// bind to buttons
-// somehow add name from object to button for flexibility
-
+const clickArea = document.querySelector('.clickarea');
 let cats = [
 	{
 		image:'/img/bashful.jpg',
@@ -58,7 +55,18 @@ catUl.addEventListener('click', function(e) {
 			catImg.setAttribute('src', cat.image);
 			catName.textContent = cat.name;
 			catImg.setAttribute('alt', `a cat named ${cat.name}`);
+			clickArea.textContent = cat.clicks;
 		}
 	});
 	}
 });
+
+catImg.addEventListener('click', function(e) {
+	console.log(e.target);
+	//match cat name to object increase clicks post to page
+	//maybe add data attr to make matching to cat array easier
+})
+
+
+
+// TODO: fix content jump with the clicks area
