@@ -2,11 +2,6 @@
 // Cat Clicker Premium, 5 cat version
 // by Amy Rutherford August 2018
 
-const cat1 = document.querySelector('#cat1');
-const cat2 = document.querySelector('#cat2');
-const cat3 = document.querySelector('#cat3');
-const cat4 = document.querySelector('#cat4');
-const cat5 = document.querySelector('#cat5');
 const catName = document.querySelector('.catname');
 const catImg = document.querySelector('#catpic');
 let catList = document.querySelectorAll('.catlisting');
@@ -69,7 +64,7 @@ catUl.addEventListener('click', function(e) {
 	}
 });
 
-catImg.addEventListener('click', function (e) {
+catImg.addEventListener('click', function () {
 	cats.forEach(function (cat) {
 		if (catImg.getAttribute('src') === cat.image) {
 			thisCatcounter = cat;
