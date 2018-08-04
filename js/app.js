@@ -1,3 +1,6 @@
+'use strict';
+// Cat Clicker Premium, 5 cat version
+// by Amy Rutherford August 2018
 
 const cat1 = document.querySelector('#cat1');
 const cat2 = document.querySelector('#cat2');
@@ -66,7 +69,5 @@ catImg.addEventListener('click', function(e) {
 	//match cat name to object increase clicks post to page
 	//maybe add data attr to make matching to cat array easier
 })
-
-
 
 // TODO: fix content jump with the clicks area
