@@ -12,6 +12,8 @@ const catImg = document.querySelector('#catpic');
 let catList = document.querySelectorAll('.catlisting');
 const catUl = document.querySelector('.catlist');
 const clickArea = document.querySelector('.clickarea');
+let thisCat;
+let thisCatcounter;
 let cats = [
 	{
 		image:'/img/bashful.jpg',
@@ -53,21 +55,29 @@ catList.forEach(function (item, i){
 //fill in alt text with 'a cat named + cat's name'
 catUl.addEventListener('click', function(e) {
 	if(e.target.nodeName === 'LI') {
-	cats.forEach(function(cat, i) {
-		if(cat.name == e.target.innerText) {
+	cats.forEach(function(cat) {
+		if (cat.name == e.target.innerText) {
+			clickArea.textContent = '';
+			thisCat = cat;
+			clickArea.textContent = thisCat.clicks;
 			catImg.setAttribute('src', cat.image);
 			catName.textContent = cat.name;
 			catImg.setAttribute('alt', `a cat named ${cat.name}`);
-			clickArea.textContent = cat.clicks;
+			return thisCat;
 		}
 	});
 	}
 });
 
-catImg.addEventListener('click', function(e) {
-	console.log(e.target);
-	//match cat name to object increase clicks post to page
-	//maybe add data attr to make matching to cat array easier
-})
-
-// TODO: fix content jump with the clicks area
+catImg.addEventListener('click', function (e) {
+	cats.forEach(function (cat) {
+		if (catImg.getAttribute('src') === cat.image) {
+			thisCatcounter = cat;
+			clickArea.textContent = thisCatcounter.clicks;
+			console.log(thisCatcounter);
+			thisCat.clicks += 1;
+			clickArea.textContent = thisCatcounter.clicks;
+			console.log(thisCatcounter);
+		}
+	});
+});
