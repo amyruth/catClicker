@@ -7,7 +7,7 @@ const catImg = document.querySelector('#catpic');
 let catList = document.querySelectorAll('.catlisting');
 const catUl = document.querySelector('.catlist');
 const clickArea = document.querySelector('.clickarea');
-let thisCat;
+let currentCat;
 let thisCatcounter;
 let cats = [
 	{
@@ -53,12 +53,12 @@ catUl.addEventListener('click', function(e) {
 	cats.forEach(function(cat) {
 		if (cat.name == e.target.innerText) {
 			clickArea.textContent = '';
-			thisCat = cat;
-			clickArea.textContent = thisCat.clicks;
+			currentCat = cat;
+			clickArea.textContent = currentCat.clicks;
 			catImg.setAttribute('src', cat.image);
 			catName.textContent = cat.name;
 			catImg.setAttribute('alt', `a cat named ${cat.name}`);
-			return thisCat;
+			return currentCat;
 		}
 	});
 	}
@@ -70,7 +70,7 @@ catImg.addEventListener('click', function () {
 			thisCatcounter = cat;
 			clickArea.textContent = thisCatcounter.clicks;
 			console.log(thisCatcounter);
-			thisCat.clicks += 1;
+			currentCat.clicks += 1;
 			clickArea.textContent = thisCatcounter.clicks;
 			console.log(thisCatcounter);
 		}
