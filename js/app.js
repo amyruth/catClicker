@@ -30,7 +30,7 @@ let model = {
 };
 
 let octopus = {
-	// shows first cat on page load
+	// shows first cat on page load and loads listeners
 	init: function () {
 		listView.init();
 		listView.createCatList();
@@ -71,8 +71,7 @@ let octopus = {
 				listView.clickArea.textContent = model.currentCat.clicks;
 			}
 		});
-	}
-	
+	}	
 };
 
 let listView = {
@@ -82,7 +81,6 @@ let listView = {
 		this.cats = octopus.getCats();
 		this.catUl = document.querySelector('.catlist');
 		this.clickArea = document.querySelector('.clickarea');
-		
 		this.catName = document.querySelector('.catname');
 	},
 
