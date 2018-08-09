@@ -49,7 +49,6 @@ let octopus = {
 			if(e.target.nodeName == "LI") {
 				model.cats.forEach(function(cat) {
 					if(cat.name === e.target.textContent) {
-						console.log('match');
 						listView.clickArea.textContent = '';
 						model.currentCat = cat;
 						listView.clickArea.textContent = model.currentCat.clicks;
@@ -65,7 +64,6 @@ let octopus = {
 
 	saveClicks: function() {
 		picView.catImg.addEventListener('click', function () {
-			console.log('click');
 			if(picView.catImg.getAttribute('src') === model.currentCat.image) {
 				model.currentCat.clicks++;
 				listView.clickArea.textContent = model.currentCat.clicks;
@@ -77,7 +75,6 @@ let octopus = {
 let listView = {
 	init: function() {
 		this.catListing = document.querySelectorAll('.catlisting');
-		//gets cat array through octopus
 		this.cats = octopus.getCats();
 		this.catUl = document.querySelector('.catlist');
 		this.clickArea = document.querySelector('.clickarea');
@@ -92,8 +89,6 @@ let listView = {
 };
 
 let picView = {
-	//event listener for clicks on image
-	// save # clicks to model
 	init: function() {
 		this.catImg = document.querySelector('#catpic');
 	}
