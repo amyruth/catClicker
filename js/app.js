@@ -34,11 +34,32 @@ let octopus = {
 	init: function () {
 		listView.init();
 		listView.createCatList();
+		this.catListEvent();
 	},
 
 	//fetches cat list from the model
 	getCats: function() {
 		return model.cats;
+	},
+
+	catListEvent: function() {
+		listView.catUl.addEventListener('click', function(e) {
+			if(e.target.nodeName == "LI") {
+				console.log(e.target.textContent);
+				model.cats.forEach(function(cat) {
+					if(cat.name === e.target.textContent) {
+						console.log('match');
+						listView.clickArea.textContent = '';
+						model.currentCat = cat;
+						console.log(cat);
+						listView.clickArea.textContent = model.currentCat.clicks;
+						listView.catName.textContent = cat.name;
+						listView.catImg.setAttribute('src', cat.image);
+						listView.catName.setAttribute('alt', `a cat named ${cat.name}`);
+					}
+				})
+			}
+		});
 	}
 };
 
@@ -48,6 +69,9 @@ let listView = {
 		//gets cat array through octopus
 		this.cats = octopus.getCats();
 		this.catUl = document.querySelector('.catlist');
+		this.clickArea = document.querySelector('.clickarea');
+		this.catImg = document.querySelector('#catpic');
+		this.catName = document.querySelector('.catname');
 	},
 
 	createCatList: function() {
