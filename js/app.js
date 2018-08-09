@@ -34,7 +34,9 @@ let octopus = {
 	init: function () {
 		listView.init();
 		listView.createCatList();
-		this.catListEvent();
+		picView.init();
+		this.loadCatPic();
+		this.saveClicks();
 	},
 
 	//fetches cat list from the model
@@ -42,25 +44,35 @@ let octopus = {
 		return model.cats;
 	},
 
-	catListEvent: function() {
+	loadCatPic: function() {
 		listView.catUl.addEventListener('click', function(e) {
 			if(e.target.nodeName == "LI") {
-				console.log(e.target.textContent);
 				model.cats.forEach(function(cat) {
 					if(cat.name === e.target.textContent) {
 						console.log('match');
 						listView.clickArea.textContent = '';
 						model.currentCat = cat;
-						console.log(cat);
 						listView.clickArea.textContent = model.currentCat.clicks;
 						listView.catName.textContent = cat.name;
-						listView.catImg.setAttribute('src', cat.image);
-						listView.catName.setAttribute('alt', `a cat named ${cat.name}`);
+						picView.catImg.setAttribute('src', cat.image);
+						picView.catImg.setAttribute('alt', `a cat named ${cat.name}`);
+						console.table(model.currentCat);
 					}
-				})
+				});
+			}
+		});
+	},
+
+	saveClicks: function() {
+		picView.catImg.addEventListener('click', function () {
+			console.log('click');
+			if(picView.catImg.getAttribute('src') === model.currentCat.image) {
+				model.currentCat.clicks++;
+				listView.clickArea.textContent = model.currentCat.clicks;
 			}
 		});
 	}
+	
 };
 
 let listView = {
@@ -70,7 +82,7 @@ let listView = {
 		this.cats = octopus.getCats();
 		this.catUl = document.querySelector('.catlist');
 		this.clickArea = document.querySelector('.clickarea');
-		this.catImg = document.querySelector('#catpic');
+		
 		this.catName = document.querySelector('.catname');
 	},
 
@@ -81,5 +93,11 @@ let listView = {
 	}
 };
 
-let picView = {};
+let picView = {
+	//event listener for clicks on image
+	// save # clicks to model
+	init: function() {
+		this.catImg = document.querySelector('#catpic');
+	}
+};
 octopus.init();
