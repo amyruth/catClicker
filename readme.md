@@ -14,5 +14,7 @@ It took longer than I wanted it to but it looks better than I thought it would. 
 * The logic for the click events is a little repetitive. I feel like it should be less clunky. I might need to use some sort of binding to make sure the right cat object is updated. As of now I capture the object used in a variable and use that to increment the # of clicks.
 * I could have thought it out a little better at the start. i wrote down what I intended and didn't use any of it but the page layout. That's something that happens but I wish I could have forseen it. But this ended up being better in the end (but not perfect).
 
+## Start of the MVO version
+I was struggling getting the code to translate into MVO. I understand the separation of concerns but the writing it out seems to confound me. Late at night on 08/08/2018 I finally got the menu to load. I hope it gets a little easier from here. I hate being stuck like this.
 
 August 2018 Amy Rutherford
