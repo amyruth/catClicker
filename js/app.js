@@ -51,12 +51,11 @@ let listView = {
 	},
 
 	createCatList: function() {
-		for(let i = 0; i <= this.catListing.length; i++){
+		for(let i = 0; i < this.catListing.length; i++){
 			this.catListing[i].textContent = this.cats[i].name;
 		}
-		return;
 	}
 };
 
-// let picView = {};
+let picView = {};
 octopus.init();
