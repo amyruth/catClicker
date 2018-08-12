@@ -19,7 +19,7 @@ body {
 
 .main {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
 	border-bottom: 3px dotted #000;
 	border-top: 3px dotted #000;
@@ -78,4 +78,35 @@ h1 {
 
 h2 {
 	margin: -10px 0 20px 0;
+}
+
+.adminButton {
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #000;
+	margin-top: 10px;
+	width: 100px;
+	text-align: center;
+	padding: 15px;
+	background-color: rgb(235, 171, 126);
+	align-self: center;
+}
+
+.adminArea {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+form {
+	margin-top: 10px;
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+input {
+	align-self: center;
+	margin-top: 10px;
+	
 }
