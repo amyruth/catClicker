@@ -38,6 +38,7 @@ let octopus = {
 		this.loadCatPic();
 		this.saveClicks();
 		this.showAdmin();
+		this.updateCat();
 	},
 
 	//fetches cat list from the model
@@ -82,8 +83,31 @@ let octopus = {
 				listView.clickArea.textContent = model.currentCat.clicks;
 			}
 		});
-	}
+	},
 
+	updateCat: function () {
+		// changes current cat when button is clicked
+		// if image is clicked clicks field updates
+		// if cat image changes get new cat info to fill the fields
+		// update image section if info changes
+		adminView.adminSave.addEventListener('click', function (e) {
+			e.preventDefault();
+			console.log('clicked');
+			if (model.currentCat.name !== adminView.adminName.value) {
+				console.log('not a match');
+				model.currentCat.name = adminView.adminName.value;
+			}
+			if (model.currentCat.image !== adminView.adminUrl.value) {
+				model.currentCat.image = adminView.adminUrl.value;
+			}
+			if(model.currentCat.adminClicks !== adminView.adminClicks.value){
+				model.currentCat.clicks = adminView.adminClicks.value;
+			}
+			// Changes list items
+			listView.createCatList();
+			// make render function to redo current cat pic?
+		})
+	}
 
 };
 
@@ -116,7 +140,7 @@ let adminView = {
 		this.adminName = document.querySelector('#adminName');
 		this.adminUrl = document.querySelector('#adminUrl');
 		this.adminClicks = document.querySelector('#adminClicks');
-		this.adminSubmit = document.querySelector('.adminSubmit')
+		this.adminSave = document.querySelector('.adminSave');
 	}
 };
 
