@@ -106,9 +106,14 @@ form {
 	padding: 10px;
 	justify-content: space-evenly;
 }
+
+.form-hide{
+	display: none;
+}
 label {
-	align-self: center;
-	margin-top: 5px;
+	align-self: flex-start;
+	margin-top: 3px;
+	margin-bottom: 5px;
 }
 
 .adminSubmit {

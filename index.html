@@ -1,65 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Cat Clicker v1</title>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+	    crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/app.css" type="text/css">
 </head>
+
 <body>
 	<div class="container">
-		<h1>Cat Clicker <i class="fas fa-paw"></i></h1>
+		<h1>Cat Clicker
+			<i class="fas fa-paw"></i>
+		</h1>
 		<h2>Click a picture and watch the magic happen.</h2>
-	
+
 		<div class="main">
 			<ul class="catlist">
-				<li class="catlisting" id="cat1"></li>
-				<li class="catlisting" id="cat2"></li>
-				<li class="catlisting" id="cat3"></li>
-				<li class="catlisting" id="cat4"></li>
-				<li class="catlisting" id="cat5"></li>
+				<li class="catlisting" id="cat1" tabindex="1"></li>
+				<li class="catlisting" id="cat2" tabindex="1"></li>
+				<li class="catlisting" id="cat3" tabindex="1"></li>
+				<li class="catlisting" id="cat4" tabindex="1"></li>
+				<li class="catlisting" id="cat5" tabindex="1"></li>
 			</ul>
-			
+
 			<div class="gallery">
 				<div class="imgarea">
-					<h2 class="catname"><!--cat name here--></h2>
+					<h2 class="catname">
+						<!--cat name here-->
+					</h2>
 					<img src="" id="catpic" alt="">
-					<div class="clickarea"><!--clicks go here--></div>
+					<div class="clickarea">
+						<!--clicks go here-->
+					</div>
 				</div>
 			</div>
 			<div class="adminArea">
 				<button class="adminButton">
 					Admin
 				</button>
-				
-				<form action="">
-					<label>
+
+				<form class="form-hide adminPanel">
+					<label for="adminName">
 						Cat Name
 					</label>
-						<input type="text" id="AdminName">
-					<label>
+					<input type="text" id="adminName">
+
+					<label for="adminUrl">
 						URL
 					</label>
-						<input type="text" id="Adminurl">
-						
-					<label>
+					<input type="text" id="adminUrl">
+
+					<label for="adminClicks">
 						Clicks
 					</label>
-						<input type="text" id="adminClicks">
-					
+					<input type="text" id="adminClicks">
+
 					<input type="submit" class="adminSubmit">
-						
+
 				</form>
 			</div>
 		</div>
 	</div>
-		
-		<script src="js/app.js"></script>
-</body>
-</html>
 
+	<script src="js/app.js"></script>
+</body>
+
+</html>
