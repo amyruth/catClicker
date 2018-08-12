@@ -104,9 +104,13 @@ form {
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
+	justify-content: space-evenly;
 }
-input {
+label {
 	align-self: center;
+	margin-top: 5px;
+}
+
+.adminSubmit {
 	margin-top: 10px;
-	
 }
